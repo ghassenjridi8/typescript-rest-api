@@ -41,53 +41,48 @@ To get this project up and running on your local machine, follow these steps:
     git clone https://github.com/ghassenjridi8/typescript-rest-api.git
     ```
 
-2. **Navigate to the project directory:**
+2. **create Postgres database using any cloud Provider for example Heroku:**
+
+3. **Navigate to the project directory:**
     ```bash
     cd typescript-rest-api
     ```
 
-3. **Install dependencies:**
-    ```bash
-    npm install
-    ```
-
-4. **Create a .env file in the root of the project and specify the port on which the server should run:**
-    ```env
-    PORT=9002
-    ```
-
-
-5. **Run server:**
-    ```bash
-    npm run dev
-    ```
-6. **Create Postgres database using any cloud provider and add the following information in the .env file**
-    ```env=
-    DB_PORT=
-    DB_USERNAME=
-    DB_PASSWORD=
-    DB_NAME=
-    ```
-
-
-7. **Populate database:**
+4. **Populate database: you can run this script:**
     ```bash
     npm run populate-db
     ```
 
-8. **Delete database:**
-    ```bash
-    npm run delete-db
+
+
+5. **create .env file in the root folder and put the env variables including the created Postgres DB credentials:**
+    ```env
+    NODE_ENV=development
+    PORT=...
+    LOGGER_LEVEL=debug
+    DB_HOST=...
+    DB_PORT=...
+    DB_USERNAME=...
+    DB_PASSWORD=...
+    DB_NAME=...
+    JWT_SECRET=...
     ```
 
 
-9. **Interact with the backend: login for example: write this command in cmd for windows**
+
+6. **build and start the container:**
+    ```bash
+    docker compose up --build
+    ```
+
+
+7. **Interact with the backend: login for example: write this command in cmd for windows**
     ```cmd
     curl -X POST http://localhost:9002/api/login -H "Content-Type: application/json" -d "{\"email\":\"admin@angular-university.io\",\"password\":\"admin\"}"
     ```
 
 
-10. **Interact with the backend: create a new course for example, other commands are available in the models folder**
+8. **Interact with the backend: create a new course for example, other commands are available in the models folder**
     ```cmd
     curl -X POST http://localhost:9002/api/courses ^
     -H "Content-Type: application/json" ^

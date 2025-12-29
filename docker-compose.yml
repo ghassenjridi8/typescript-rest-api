@@ -1,0 +1,13 @@
+version: '3'
+services:
+  app:
+    build: .
+    container_name: rest-api
+    environment:
+      - .env
+    ports:
+      - "9002:9002"
+    volumes:
+      - .:/app
+
+
