@@ -30,7 +30,7 @@ export async function createUser(request: Request, response: Response, next: Nex
             throw `no email available, cannot save course.`}
 
         if (!password){
-            throw `no email available, cannot save course.`}
+            throw `no password available, cannot save course.`}
         
 
         const repository = AppDataSource.getRepository(User);
